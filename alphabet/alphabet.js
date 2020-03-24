@@ -1,8 +1,8 @@
-const targetDiv = document.getElementById('target')
+const letterDiv = document.getElementById('target')
 const scoreDiv = document.getElementById('score')
 
-let score = 0
 let letter = newLetter()
+let score = 0
 
 print()
 
@@ -16,7 +16,7 @@ function keypress(event) {
 
 function print() {
   scoreDiv.innerHTML = score
-  targetDiv.innerHTML = letter.toUpperCase()
+  letterDiv.innerHTML = letter.toUpperCase()
 }
 
 function newLetter() {
