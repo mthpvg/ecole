@@ -1,0 +1,23 @@
+{
+  "name": "ecole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mthpvg/ecole.git"
+  },
+  "keywords": [],
+  "author": "mthpvg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mthpvg/ecole/issues"
+  },
+  "homepage": "https://github.com/mthpvg/ecole#readme",
+  "dependencies": {
+    "serve": "^11.3.0"
+  }
+}

@@ -1,4 +1,4 @@
-const letterDiv = document.getElementById('target')
+const letterDiv = document.getElementById('letter')
 const scoreDiv = document.getElementById('score')
 
 let letter = newLetter()
