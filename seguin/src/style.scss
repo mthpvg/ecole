@@ -1,0 +1,42 @@
+body {
+  font-family: 'Comic Neue', cursive;
+  box-sizing: border-box;
+}
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: space-between
+}
+.container__beads {
+  width: 20%;
+  display: flex
+}
+.container__table {
+  width: 20%
+}
+.container__tiles {
+  width: 20%
+}
+.text-center{
+  text-align: center;
+}
+.table__contour {
+  border: solid #000 1px;
+  padding: 10px 0px;
+  width: 70px;
+}
+.table__interieur {
+  border: solid #000 1px;
+  padding : 10px
+}
+
+$bead-size: 15px;
+
+.beadsbar {
+  margin: 5px
+}
+.bead {
+  width : $bead-size;
+  height : $bead-size;
+  border-radius: $bead-size;
+  border: solid 1px #000
+}
