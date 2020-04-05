@@ -1,6 +1,11 @@
+$tile-size: 20px;
+$bead-size: 15px;
+
+
 body {
   font-family: 'Comic Neue', cursive;
   box-sizing: border-box;
+  background-color: #c7e6ff
 }
 .container {
   display: flex; /* or inline-flex */
@@ -8,13 +13,39 @@ body {
 }
 .container__beads {
   width: 20%;
-  display: flex
+  display: flex;
+  align-items: flex-end;
 }
+.container__center {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+.container__results {
+  display: flex;
+  align-items: center;
+}
+
+.container__bars {
+  width: 50%;
+  min-height: 180px;
+  display: flex;
+  align-items:flex-start;
+}
+
 .container__table {
-  width: 20%
+  width: 50%;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
 }
 .container__tiles {
-  width: 20%
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .text-center{
   text-align: center;
@@ -22,21 +53,36 @@ body {
 .table__contour {
   border: solid #000 1px;
   padding: 10px 0px;
-  width: 70px;
+  background-color: #f1b448
 }
 .table__interieur {
   border: solid #000 1px;
-  padding : 10px
+  display: flex;
 }
-
-$bead-size: 15px;
-
 .beadsbar {
-  margin: 5px
+  margin: 5px;
+  cursor: pointer;
 }
 .bead {
   width : $bead-size;
   height : $bead-size;
   border-radius: $bead-size;
   border: solid 1px #000
+}
+
+.tile {
+  width: $tile-size;
+  padding: 20px 10px;
+  font-size: 30px;
+  text-align:center;
+  background-color: #ffdfa6
+}
+
+.tile__unit {
+  border: solid #000 1px;
+}
+.button {
+  padding: 5px 10px;
+  background-color: #fff;
+  cursor: pointer;
 }

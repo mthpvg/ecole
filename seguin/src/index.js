@@ -16,32 +16,69 @@ class Niveau2 extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      nombrePerles:[],
-      nombreTable:0,
-      nombreDit:0
+      nBeads:[],
+      nTable:0,
+      nTold:0
     }
+    this.addBeads = this.addBeads.bind(this)
+    this.removeAllBeads = this.removeAllBeads.bind(this)
+  }
+  addBeads(e, value){
+    let nBeads = this.state.nBeads;
+    nBeads.push(value);
+    this.setState({nBeads})
+  }
+  removeAllBeads(){
+    this.setState({nBeads : []})
   }
   render() {
-    let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i}/>)
+    const {nBeads} = this.state
+    let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i} addBeads = {this.addBeads}/>)
+    let tiles = [...Array(10)].map((e, i) => <Tile n = {i} key = {i}/>)
+    let barresPlaced = nBeads.map((n,i) => <Barre n = {n} key = {i}/>)
     return (
       <div className = "container">
         <div className = "container__beads">
           {barres}
         </div>
-        <div className = "container__table">
-          <TableDeSeguin10/>
-        </div><div className = "container__tiles">
+        <div className = "container__center">
+          <AudioButton/>
+          <div className = "container__results">
+            <div className = "container__bars">
+              {barresPlaced}
+            </div>
+            <div className = "container__table">
+              <TableDeSeguin10/>
+            </div>
+          </div>
+          <Buttons removeAllBeads = {this.removeAllBeads}/>
+        </div>
+
+        <div className = "container__tiles">
+          {tiles}
         </div>
       </div>
     )
   }
 }
 
+const AudioButton = (props) => {
+    return (
+      <div > Reecouter</div>
+    )
+}
+const Buttons = (props) => {
+  return (
+    <div className = "container__btn-reset">
+      <ButtonReset removeAllBeads = {props.removeAllBeads}/>
+    </div>
+  )
+}
 const Barre = (props) => {
-  const n = props.n;
+  const {n, addBeads} = props;
   let fullbarre = [...Array(n)].map((e, i) => <Perle n = {n} key = {i}/>)
   return (
-    <div className = "beadsbar">
+    <div className = "beadsbar" onClick = {(e) => props.addBeads(e, n)}>
     {fullbarre}
     </div>
   )
@@ -59,14 +96,32 @@ const Perle = (props) => {
   )
 }
 
+const ButtonReset = (props) => {
+  const {removeAllBeads} = props;
+  return (
+    <div onClick = {removeAllBeads} className = "button"> Effacer</div>
+  )
+}
 const TableDeSeguin10 = (props) => {
   return (
     <div className="table__contour">
       <div className="table__interieur">
-        <div className="table__dizaine">
-          <h2 className="text-center">10</h2>
+        <div className="tile">
+          1
+        </div>
+        <div className="tile">
+          0
         </div>
       </div>
+    </div>
+  )
+}
+
+const Tile = (props) => {
+  const n = props.n;
+  return (
+    <div className = "tile tile__unit">
+      {n}
     </div>
   )
 }
