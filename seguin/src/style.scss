@@ -1,18 +1,22 @@
 $tile-size: 20px;
 $bead-size: 15px;
 
-
+html{
+  height: 100%
+}
 body {
   font-family: 'Comic Neue', cursive;
   box-sizing: border-box;
-  background-color: #c7e6ff
+  background-color: #c7e6ff;
+  max-height: 100%
 }
 svg {
   height : 60px
 }
 .container {
   display: flex; /* or inline-flex */
-  justify-content: space-between
+  justify-content: space-between;
+  max-height: 100%
 }
 .container__beads {
   width: 20%;
@@ -49,6 +53,8 @@ svg {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+
 }
 .container__buttons {
   display: flex

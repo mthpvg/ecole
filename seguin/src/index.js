@@ -82,7 +82,8 @@ class Niveau2 extends React.Component {
     let tiles = [...Array(10)].map((e, i) => <Tile n = {i} key = {i} addTile = {this.addTile}/>)
     let barresPlaced = nBeads.map((n,i) => <Barre n = {n} key = {i}/>);
     const position = score * 10;
-    const style_position = {left : position+"%"}
+    const style_position = {left : position+"%"};
+    const maxHeight = window.innerHeight;
     return (
       <div>
         <div className = "container">
@@ -102,7 +103,7 @@ class Niveau2 extends React.Component {
             <Buttons removeAllBeads = {this.removeAllBeads} checkResult = {this.checkResult}/>
           </div>
 
-          <div className = "container__tiles">
+          <div className = "container__tiles" style = {{maxHeight : maxHeight}}>
             {tiles}
           </div>
         </div>
