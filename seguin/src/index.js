@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import audio from './audio';
+import {Ear, Eraser, Check} from './svg';
+
 import './style.scss'
 
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
@@ -36,6 +38,7 @@ class Niveau2 extends React.Component {
     if(prevState.nTold  !== this.state.nTold){
       this.play()
     }
+
   }
   setNewNumber(){
     const numberToFind = Math.floor(Math.random() * 10 )+10;
@@ -104,13 +107,15 @@ class Niveau2 extends React.Component {
 
 const ButtonValid = (props) => {
   return (
-    <div className="button" onClick = {props.checkResult}> J'ai fini </div>
+    <div className="button" onClick = {props.checkResult}> <Check/> </div>
   )
 }
 
 const AudioButton = (props) => {
     return (
-      <div className="button" onClick = {props.play}> Reecouter</div>
+      <div className="button" onClick = {props.play}>
+        <Ear/>
+      </div>
     )
 }
 const Buttons = (props) => {
@@ -146,7 +151,9 @@ const Perle = (props) => {
 const ButtonReset = (props) => {
   const {removeAllBeads} = props;
   return (
-    <div onClick = {removeAllBeads} className = "button"> Effacer</div>
+    <div onClick = {removeAllBeads} className = "button">
+      <Eraser/>
+    </div>
   )
 }
 
