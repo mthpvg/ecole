@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import audio from './audio';
 import './style.scss'
 
+const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 class HelloMessage extends React.Component {
   render() {
     return (
@@ -22,6 +24,17 @@ class Niveau2 extends React.Component {
     }
     this.addBeads = this.addBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)
+    this.addTile = this.addTile.bind(this)
+    this.play = this.play.bind(this)
+    this.setNewNumber = this.setNewNumber.bind(this)
+  }
+  componentDidMount(){
+    this.setNewNumber()
+  }
+  setNewNumber(){
+    const numberToFind = Math.floor(Math.random() * 10 )+11;
+    console.log(numberToFind);
+    this.setState({nTold :numberToFind});
   }
   addBeads(e, value){
     let nBeads = this.state.nBeads;
@@ -31,10 +44,19 @@ class Niveau2 extends React.Component {
   removeAllBeads(){
     this.setState({nBeads : []})
   }
+  addTile(e, value){
+    this.setState({nTable:value})
+  }
+  play(){
+    const n = this.state.nTold-10;
+    const toPlay = new Audio(cloudFolder + audio[n]);
+    toPlay.play();
+  }
+
   render() {
     const {nBeads} = this.state
     let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i} addBeads = {this.addBeads}/>)
-    let tiles = [...Array(10)].map((e, i) => <Tile n = {i} key = {i}/>)
+    let tiles = [...Array(10)].map((e, i) => <Tile n = {i} key = {i} addTile = {this.addTile}/>)
     let barresPlaced = nBeads.map((n,i) => <Barre n = {n} key = {i}/>)
     return (
       <div className = "container">
@@ -42,16 +64,17 @@ class Niveau2 extends React.Component {
           {barres}
         </div>
         <div className = "container__center">
-          <AudioButton/>
+          <AudioButton play = {this.play}/>
           <div className = "container__results">
             <div className = "container__bars">
               {barresPlaced}
             </div>
             <div className = "container__table">
-              <TableDeSeguin10/>
+              <TableDeSeguin10 tile = {this.state.nTable}/>
             </div>
           </div>
           <Buttons removeAllBeads = {this.removeAllBeads}/>
+
         </div>
 
         <div className = "container__tiles">
@@ -62,15 +85,22 @@ class Niveau2 extends React.Component {
   }
 }
 
+const ButtonValid = (props) => {
+  return (
+    <div className="button" > J'ai fini </div>
+  )
+}
+
 const AudioButton = (props) => {
     return (
-      <div > Reecouter</div>
+      <div className="button" onClick = {props.play}> Reecouter</div>
     )
 }
 const Buttons = (props) => {
   return (
-    <div className = "container__btn-reset">
+    <div className = "container__buttons">
       <ButtonReset removeAllBeads = {props.removeAllBeads}/>
+      <ButtonValid />
     </div>
   )
 }
@@ -102,7 +132,9 @@ const ButtonReset = (props) => {
     <div onClick = {removeAllBeads} className = "button"> Effacer</div>
   )
 }
+
 const TableDeSeguin10 = (props) => {
+  const {tile} = props
   return (
     <div className="table__contour">
       <div className="table__interieur">
@@ -110,7 +142,7 @@ const TableDeSeguin10 = (props) => {
           1
         </div>
         <div className="tile">
-          0
+          {tile}
         </div>
       </div>
     </div>
@@ -118,13 +150,14 @@ const TableDeSeguin10 = (props) => {
 }
 
 const Tile = (props) => {
-  const n = props.n;
+  const {addTile, n} = props;
   return (
-    <div className = "tile tile__unit">
+    <div className = "tile tile__unit" onClick = {(e) => props.addTile(e, n)}>
       {n}
     </div>
   )
 }
 
 var mountNode = document.getElementById('app')
-ReactDOM.render(<HelloMessage name='Jane' />, mountNode)
+
+ReactDOM.render(<HelloMessage/>, mountNode)

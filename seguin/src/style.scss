@@ -47,6 +47,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container__buttons {
+  display: flex
+}
 .text-center{
   text-align: center;
 }
@@ -75,7 +78,8 @@ body {
   padding: 20px 10px;
   font-size: 30px;
   text-align:center;
-  background-color: #ffdfa6
+  background-color: #ffdfa6;
+  cursor: pointer;
 }
 
 .tile__unit {
@@ -83,9 +87,10 @@ body {
 }
 .button {
   padding: 5px 10px;
+  margin: 5px 10px;
   background-color: #fff;
   cursor: pointer;
 }
 .button:hover{
-  background-color: grey
+  background-color: #f9efde
 }
