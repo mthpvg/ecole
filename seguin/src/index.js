@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import audio from './audio';
-import {Ear, Eraser, Check, Cat} from './svg';
-
+import {Ear, Eraser, Check} from './svg';
+import {animals, Cat} from './animals'
 import './style.scss'
-
+console.log(animals);
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
+
 class HelloMessage extends React.Component {
   render() {
     return (
@@ -23,7 +24,8 @@ class Niveau2 extends React.Component {
       nBeads:[],
       nTable:0,
       nTold:0,
-      score:0
+      score:0,
+      wins:0
     }
     this.addBeads = this.addBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)
@@ -84,6 +86,7 @@ class Niveau2 extends React.Component {
     const position = score * 10;
     const style_position = {left : position+"%"};
     const maxHeight = window.innerHeight;
+    const animal = animals[1]
     return (
       <div>
         <div className = "container">
@@ -109,7 +112,7 @@ class Niveau2 extends React.Component {
         </div>
         <div className = "container__bottom">
           <div className = "animal_position" style = {style_position}>
-            <Cat/>
+            {animal}
           </div>
         </div>
       </div>
