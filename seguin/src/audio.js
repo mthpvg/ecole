@@ -10,8 +10,7 @@ const audio = [
   "16_ucruub.mp3",
   "17_ve4pwa.mp3",
   "18_cymfrz.mp3",
-  "19_u16x9d.mp3",
-  "20_qxvsoh.mp3"
+  "19_u16x9d.mp3"
 ]
 
 export default audio

@@ -27,14 +27,23 @@ class Niveau2 extends React.Component {
     this.addTile = this.addTile.bind(this)
     this.play = this.play.bind(this)
     this.setNewNumber = this.setNewNumber.bind(this)
+    this.checkResult = this.checkResult.bind(this)
   }
   componentDidMount(){
-    this.setNewNumber()
+    this.setNewNumber();
+  }
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.nTold  !== this.state.nTold){
+      this.play()
+    }
   }
   setNewNumber(){
-    const numberToFind = Math.floor(Math.random() * 10 )+11;
-    console.log(numberToFind);
-    this.setState({nTold :numberToFind});
+    const numberToFind = Math.floor(Math.random() * 10 )+10;
+    this.setState({
+      nBeads:[],
+      nTable:0,
+      nTold :numberToFind
+    });
   }
   addBeads(e, value){
     let nBeads = this.state.nBeads;
@@ -52,7 +61,15 @@ class Niveau2 extends React.Component {
     const toPlay = new Audio(cloudFolder + audio[n]);
     toPlay.play();
   }
-
+  checkResult(){
+    const {nBeads, nTable, nTold} = this.state;
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const sumBeads = nBeads.reduce(reducer);
+    const sumTile = nTable + 10;
+    if (sumTile === sumBeads && sumBeads === nTold ) {
+      this.setNewNumber()
+    }
+  }
   render() {
     const {nBeads} = this.state
     let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i} addBeads = {this.addBeads}/>)
@@ -73,7 +90,7 @@ class Niveau2 extends React.Component {
               <TableDeSeguin10 tile = {this.state.nTable}/>
             </div>
           </div>
-          <Buttons removeAllBeads = {this.removeAllBeads}/>
+          <Buttons removeAllBeads = {this.removeAllBeads} checkResult = {this.checkResult}/>
 
         </div>
 
@@ -87,7 +104,7 @@ class Niveau2 extends React.Component {
 
 const ButtonValid = (props) => {
   return (
-    <div className="button" > J'ai fini </div>
+    <div className="button" onClick = {props.checkResult}> J'ai fini </div>
   )
 }
 
@@ -100,7 +117,7 @@ const Buttons = (props) => {
   return (
     <div className = "container__buttons">
       <ButtonReset removeAllBeads = {props.removeAllBeads}/>
-      <ButtonValid />
+      <ButtonValid checkResult = {props.checkResult}/>
     </div>
   )
 }
