@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import audio from './audio';
-import {Ear, Eraser, Check} from './svg';
+import {Ear, Eraser, Check, Cat} from './svg';
 
 import './style.scss'
 
@@ -22,7 +22,8 @@ class Niveau2 extends React.Component {
     this.state = {
       nBeads:[],
       nTable:0,
-      nTold:0
+      nTold:0,
+      score:0
     }
     this.addBeads = this.addBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)
@@ -70,35 +71,45 @@ class Niveau2 extends React.Component {
     const sumBeads = nBeads.reduce(reducer);
     const sumTile = nTable + 10;
     if (sumTile === sumBeads && sumBeads === nTold ) {
+      let newScore = this.state.score + 1;
+      this.setState({score : newScore});
       this.setNewNumber()
     }
   }
   render() {
-    const {nBeads} = this.state
+    const {nBeads, score} = this.state
     let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i} addBeads = {this.addBeads}/>)
     let tiles = [...Array(10)].map((e, i) => <Tile n = {i} key = {i} addTile = {this.addTile}/>)
-    let barresPlaced = nBeads.map((n,i) => <Barre n = {n} key = {i}/>)
+    let barresPlaced = nBeads.map((n,i) => <Barre n = {n} key = {i}/>);
+    const position = score * 10;
+    const style_position = {left : position+"%"}
     return (
-      <div className = "container">
-        <div className = "container__beads">
-          {barres}
-        </div>
-        <div className = "container__center">
-          <AudioButton play = {this.play}/>
-          <div className = "container__results">
-            <div className = "container__bars">
-              {barresPlaced}
-            </div>
-            <div className = "container__table">
-              <TableDeSeguin10 tile = {this.state.nTable}/>
-            </div>
+      <div>
+        <div className = "container">
+          <div className = "container__beads">
+            {barres}
           </div>
-          <Buttons removeAllBeads = {this.removeAllBeads} checkResult = {this.checkResult}/>
+          <div className = "container__center">
+            <AudioButton play = {this.play}/>
+            <div className = "container__results">
+              <div className = "container__bars">
+                {barresPlaced}
+              </div>
+              <div className = "container__table">
+                <TableDeSeguin10 tile = {this.state.nTable}/>
+              </div>
+            </div>
+            <Buttons removeAllBeads = {this.removeAllBeads} checkResult = {this.checkResult}/>
+          </div>
 
+          <div className = "container__tiles">
+            {tiles}
+          </div>
         </div>
-
-        <div className = "container__tiles">
-          {tiles}
+        <div className = "container__bottom">
+          <div className = "animal_position" style = {style_position}>
+            <Cat/>
+          </div>
         </div>
       </div>
     )
