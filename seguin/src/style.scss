@@ -1,5 +1,6 @@
 $tile-size: 20px;
 $bead-size: 15px;
+$svgHeight: 60px;
 
 html{
   height: 100%
@@ -11,12 +12,22 @@ body {
   max-height: 100%
 }
 svg {
-  height : 60px
+  height : $svgHeight
 }
 .container {
   display: flex; /* or inline-flex */
   justify-content: space-between;
   max-height: 100%
+}
+.container__left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container__animalWon{
+  min-height: $svgHeight;
+  display: flex;
+  flex-wrap: wrap;
 }
 .container__beads {
   width: 20%;

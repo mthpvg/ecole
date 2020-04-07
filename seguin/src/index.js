@@ -4,7 +4,6 @@ import audio from './audio';
 import {Ear, Eraser, Check} from './svg';
 import {animals, Cat} from './animals'
 import './style.scss'
-console.log(animals);
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 
 class HelloMessage extends React.Component {
@@ -24,7 +23,7 @@ class Niveau2 extends React.Component {
       nBeads:[],
       nTable:0,
       nTold:0,
-      score:0,
+      score:9,
       wins:0
     }
     this.addBeads = this.addBeads.bind(this)
@@ -41,7 +40,6 @@ class Niveau2 extends React.Component {
     if(prevState.nTold  !== this.state.nTold){
       this.play()
     }
-
   }
   setNewNumber(){
     const numberToFind = Math.floor(Math.random() * 10 )+10;
@@ -74,24 +72,44 @@ class Niveau2 extends React.Component {
     const sumTile = nTable + 10;
     if (sumTile === sumBeads && sumBeads === nTold ) {
       let newScore = this.state.score + 1;
-      this.setState({score : newScore});
-      this.setNewNumber()
+      switch (newScore) {
+        case 10:
+          let wins = this.state.wins + 1;
+          this.setState({
+            score : 0,
+            wins
+          })
+          this.setNewNumber()
+          break;
+        default:
+          this.setState({score : newScore});
+          this.setNewNumber()
+      }
+
     }
   }
   render() {
-    const {nBeads, score} = this.state
+    const {nBeads, score, wins} = this.state
     let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i} addBeads = {this.addBeads}/>)
     let tiles = [...Array(10)].map((e, i) => <Tile n = {i} key = {i} addTile = {this.addTile}/>)
     let barresPlaced = nBeads.map((n,i) => <Barre n = {n} key = {i}/>);
     const position = score * 10;
     const style_position = {left : position+"%"};
     const maxHeight = window.innerHeight;
-    const animal = animals[1]
+    console.log(maxHeight);
+    const animal = animals[wins];
+    const animalWon = animals.slice(0,wins);
+    const animalsHeight = 60
     return (
       <div>
         <div className = "container">
-          <div className = "container__beads">
-            {barres}
+          <div className = "container__left">
+            <div className = "container__animalWon">
+              {animalWon}
+            </div>
+            <div className = "container__beads">
+              {barres}
+            </div>
           </div>
           <div className = "container__center">
             <AudioButton play = {this.play}/>
@@ -106,7 +124,7 @@ class Niveau2 extends React.Component {
             <Buttons removeAllBeads = {this.removeAllBeads} checkResult = {this.checkResult}/>
           </div>
 
-          <div className = "container__tiles" style = {{maxHeight : maxHeight}}>
+          <div className = "container__tiles" style = {{maxHeight : maxHeight - animalsHeight}}>
             {tiles}
           </div>
         </div>
