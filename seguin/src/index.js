@@ -85,9 +85,9 @@ class Niveau2 extends React.Component {
           this.setState({score : newScore});
           this.setNewNumber()
       }
-
     }
   }
+
   render() {
     const {nBeads, score, wins} = this.state
     let barres = [...Array(10)].map((e, i) => <Barre n = {i+1} key = {i} addBeads = {this.addBeads}/>)
@@ -96,7 +96,6 @@ class Niveau2 extends React.Component {
     const position = score * 10;
     const style_position = {left : position+"%"};
     const maxHeight = window.innerHeight;
-    console.log(maxHeight);
     const animal = animals[wins];
     const animalWon = animals.slice(0,wins);
     const animalsHeight = 60
@@ -104,8 +103,11 @@ class Niveau2 extends React.Component {
       <div>
         <div className = "container">
           <div className = "container__left">
-            <div className = "container__animalWon">
-              {animalWon}
+            <div>
+              <h3>Clique sur l'oreille pour entendre le son. Place les perles et le chiffre des unités, puis valide.</h3>
+              <div className = "container__animalWon">
+                {animalWon}
+              </div>
             </div>
             <div className = "container__beads">
               {barres}
