@@ -219,5 +219,5 @@ const Lion = (
   </svg>
 )
 export const animals = [
-  Lion, Mouse, Chicken, Cat, Fox, Dog, Dolphin, Elephant
+  Mouse, Chicken, Cat, Fox, Dog, Lion, Dolphin, Elephant
 ]

@@ -1,6 +1,9 @@
 $tile-size: 20px;
 $bead-size: 15px;
+$bead-sizePhone: 10px;
 $svgHeight: 60px;
+$svgHeightPhone: 30px;
+$breakpoint-phone: 768px;
 
 html{
   height: 100%
@@ -30,6 +33,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
 }
+
 .container__beads {
   display: flex;
   align-items: flex-end;
@@ -117,4 +121,24 @@ svg {
 .animal_position{
   position: relative;
   transition: 1s ease-in-out
+}
+@media (max-width: $breakpoint-phone) {
+  svg {
+    height : $svgHeightPhone
+  }
+  .container__animalWon{
+    min-height: $svgHeightPhone;
+  }
+  .bead {
+    width : $bead-sizePhone;
+    height : $bead-sizePhone;
+    border-radius: $bead-sizePhone;
+    border: solid 1px #000
+  }
+  .container__bars {
+    width: 50%;
+    min-height: 130px;
+    display: flex;
+    align-items:flex-start;
+  }
 }

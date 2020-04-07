@@ -20,11 +20,13 @@ class Niveau2 extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      nBeads:[],
+      nBeads:[0,0],
       nTable:0,
       nTold:0,
-      score:9,
-      wins:0
+      score:0,
+      wins:0,
+      width:0,
+      height:0
     }
     this.addBeads = this.addBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)
@@ -32,26 +34,39 @@ class Niveau2 extends React.Component {
     this.play = this.play.bind(this)
     this.setNewNumber = this.setNewNumber.bind(this)
     this.checkResult = this.checkResult.bind(this)
+    this.updateDimensions = this.updateDimensions.bind(this)
+
   }
   componentDidMount(){
     this.setNewNumber();
+    window.addEventListener('resize', this.updateDimensions);
   }
   componentDidUpdate(prevProps, prevState){
     if(prevState.nTold  !== this.state.nTold){
       this.play()
     }
   }
+  updateDimensions(){
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
   setNewNumber(){
     const numberToFind = Math.floor(Math.random() * 10 )+10;
     this.setState({
-      nBeads:[],
+      nBeads:[0,0],
       nTable:0,
       nTold :numberToFind
     });
   }
   addBeads(e, value){
     let nBeads = this.state.nBeads;
-    nBeads.push(value);
+    switch (value) {
+      case 10:
+        nBeads[0] = 10;
+        break;
+      default:
+        nBeads[1] = value
+    }
     this.setState({nBeads})
   }
   removeAllBeads(){
@@ -96,15 +111,19 @@ class Niveau2 extends React.Component {
     const position = score * 10;
     const style_position = {left : position+"%"};
     const maxHeight = window.innerHeight;
+    const windowsWidth = window.innerWidth;
     const animal = animals[wins];
     const animalWon = animals.slice(0,wins);
-    const animalsHeight = 60
+    let animalsHeight = 60;
+    if (windowsWidth < 768) {
+      animalsHeight = 30
+    }
     return (
       <div>
         <div className = "container">
           <div className = "container__left">
             <div>
-              <h3>Clique sur l'oreille pour entendre le son. Place les perles et le chiffre des unités, puis valide.</h3>
+              <h4>Clique sur l'oreille pour entendre le son. Clique sur les perles et le chiffre des unités, puis valide.</h4>
               <div className = "container__animalWon">
                 {animalWon}
               </div>
