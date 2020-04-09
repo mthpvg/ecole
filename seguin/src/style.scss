@@ -4,12 +4,13 @@ $bead-sizePhone: 10px;
 $svgHeight: 60px;
 $svgHeightPhone: 30px;
 $breakpoint-phone: 768px;
+$font-family: 'Quicksand', sans-serif;
 
 html{
   height: 100%
 }
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: $font-family;
   box-sizing: border-box;
   background-color: #c7e6ff;
   max-height: 100%
@@ -17,10 +18,26 @@ body {
 svg {
   height : $svgHeight
 }
+.flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-align-center{
+  align-items: center
+}
+.text-center{
+  text-align: center;
+}
 .container {
   display: flex; /* or inline-flex */
   justify-content: space-between;
   max-height: 100%
+}
+.big-container{
+  max-width:800px;
+  margin: 0px auto
 }
 .container__left{
   display: flex;
@@ -141,4 +158,18 @@ svg {
     display: flex;
     align-items:flex-start;
   }
+}
+
+button{
+  padding : 10px 20px;
+  background-color: #FFF;
+  cursor: pointer;
+  border: solid 1px #000;
+  font-family: $font-family
+}
+button:hover{
+  background-color: #f9efde;
+}
+.games-link-container img{
+  width: 200px
 }

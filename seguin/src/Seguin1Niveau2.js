@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import audio from './audio';
 import {Ear, Eraser, Check} from './svg';
-import {animals, Cat} from './animals'
+import {animals, Cat} from './animals';
+import Navbar from './Navbar';
 import './style.scss'
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 const logo = "https://res.cloudinary.com/eclimontessori/image/upload/v1586343660/logo-small_rfd5z6.png"
@@ -111,6 +112,7 @@ class Seguin1Niveau2 extends React.Component {
     }
     return (
       <div>
+        <Navbar history = {this.props.history}/>
         <div className = "container">
           <div className = "container__left">
             <div>

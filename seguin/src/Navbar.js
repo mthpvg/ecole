@@ -16,9 +16,7 @@ class Navbar extends Component {
         <a href = "https://www.eclimontessori.org" target = "_blank">
           <img style = {{width : "100px"}} src = {logo} alt = "logo ECLI Montessori Thonon"/>
         </a>
-        <button onClick={this.goTo.bind(this, 'seguin1niveau2')}>
-          Seguin1Niveau2
-        </button>
+        
       </div>
     )
   }
