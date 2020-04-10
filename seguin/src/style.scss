@@ -27,6 +27,12 @@ svg {
 .flex-align-center{
   align-items: center
 }
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-justify-space-between{
+  justify-content: space-between;
+}
 .text-center{
   text-align: center;
 }
@@ -172,4 +178,7 @@ button:hover{
 }
 .games-link-container img{
   width: 200px
+}
+.games-link-container button{
+  margin : 10px
 }

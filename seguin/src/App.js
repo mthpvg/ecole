@@ -7,6 +7,12 @@ const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v158
 
 const games = [
   {
+    url : "seguin1niveau1",
+    name : "Seguin 1 Niveau 1",
+    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586425816/Screen_Shot_2020-04-09_at_11.42.02_AM_tqkrfz.png",
+    alt : "jeux numeration Montessori Seguin 1 perles uniquement"
+  },
+  {
     url : "seguin1niveau2",
     name : "Seguin 1 Niveau 2",
     img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586425816/Screen_Shot_2020-04-09_at_11.42.02_AM_tqkrfz.png",
@@ -59,7 +65,7 @@ class Activities extends React.Component {
       )
     })
     return(
-      <div className = "games-link-container">
+      <div className = "games-link-container flex flex-wrap flex-justify-space-between">
         {allGames}
       </div>
     )
