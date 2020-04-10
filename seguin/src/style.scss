@@ -33,6 +33,9 @@ svg {
 .flex-justify-space-between{
   justify-content: space-between;
 }
+.flex-justify-center{
+  justify-content: center;
+}
 .text-center{
   text-align: center;
 }
@@ -40,6 +43,9 @@ svg {
   display: flex; /* or inline-flex */
   justify-content: space-between;
   max-height: 100%
+}
+.container__half {
+  width:50%
 }
 .big-container{
   max-width:800px;
@@ -73,7 +79,6 @@ svg {
 }
 
 .container__bars {
-  width: 50%;
   min-height: 180px;
   display: flex;
   align-items:flex-start;
@@ -94,9 +99,7 @@ svg {
   flex-wrap: wrap;
 
 }
-.container__buttons {
-  display: flex
-}
+
 
 .text-center{
   text-align: center;
@@ -173,6 +176,7 @@ button{
   border: solid 1px #000;
   font-family: $font-family
 }
+
 button:hover{
   background-color: #f9efde;
 }

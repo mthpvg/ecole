@@ -130,7 +130,7 @@ class Seguin1Niveau2 extends React.Component {
           <div className = "container__center">
             <AudioButton play = {this.play}/>
             <div className = "container__results">
-              <div className = "container__bars">
+              <div className = "container__bars container__half">
                 {barresPlaced}
               </div>
               <div className = "container__table">

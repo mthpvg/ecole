@@ -28,7 +28,7 @@ export const Perle = (props) => {
 
 export const AudioButton = (props) => {
     return (
-      <div className="button" onClick = {props.play}>
+      <div className="button flex flex-justify-center" onClick = {props.play}>
         <Ear/>
       </div>
     )
