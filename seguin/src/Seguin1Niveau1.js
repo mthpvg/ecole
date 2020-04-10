@@ -71,6 +71,7 @@ class Seguin1Niveau1 extends React.Component {
     const toPlay = new Audio(cloudFolder + audio[n]);
     toPlay.play();
   }
+
   checkResult(){
     const {nBeads, nTold} = this.state;
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -90,6 +91,8 @@ class Seguin1Niveau1 extends React.Component {
           this.setState({score : newScore});
           this.setNewNumber()
       }
+    } else {
+      this.removeAllBeads()
     }
   }
 

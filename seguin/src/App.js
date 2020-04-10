@@ -9,13 +9,13 @@ const games = [
   {
     url : "seguin1niveau1",
     name : "Seguin 1 Niveau 1",
-    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586425816/Screen_Shot_2020-04-09_at_11.42.02_AM_tqkrfz.png",
+    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586526960/Seguin1N1.png",
     alt : "jeux numeration Montessori Seguin 1 perles uniquement"
   },
   {
     url : "seguin1niveau2",
     name : "Seguin 1 Niveau 2",
-    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586425816/Screen_Shot_2020-04-09_at_11.42.02_AM_tqkrfz.png",
+    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586526958/seguin1n2_dtufis.jpg",
     alt : "jeux numeration Montessori Seguin 1"
   }
 ]

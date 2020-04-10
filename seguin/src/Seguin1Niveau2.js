@@ -94,6 +94,14 @@ class Seguin1Niveau2 extends React.Component {
           this.setState({score : newScore});
           this.setNewNumber()
       }
+    } else {
+      if (sumTile === nTold) {
+        this.setState({nBeads : []})
+      } else if (sumBeads === nTold) {
+        this.setState({nTable:0})
+      } else {
+        this.setState({nBeads : [], nTable:0})
+      }
     }
   }
 
