@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import audio from './audio';
-import {Ear, Eraser, Check} from './svg';
 import {animals, Cat} from './animals';
+import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
+
 import Navbar from './Navbar';
 import './style.scss'
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 const logo = "https://res.cloudinary.com/eclimontessori/image/upload/v1586343660/logo-small_rfd5z6.png"
+
 
 class Seguin1Niveau2 extends React.Component {
   constructor (props) {
@@ -152,19 +154,9 @@ class Seguin1Niveau2 extends React.Component {
   }
 }
 
-const ButtonValid = (props) => {
-  return (
-    <div className="button" onClick = {props.checkResult}> <Check/> </div>
-  )
-}
 
-const AudioButton = (props) => {
-    return (
-      <div className="button" onClick = {props.play}>
-        <Ear/>
-      </div>
-    )
-}
+
+
 const Buttons = (props) => {
   return (
     <div className = "container__buttons">
@@ -173,36 +165,8 @@ const Buttons = (props) => {
     </div>
   )
 }
-const Barre = (props) => {
-  const {n, addBeads} = props;
-  let fullbarre = [...Array(n)].map((e, i) => <Perle n = {n} key = {i}/>)
-  return (
-    <div className = "beadsbar" onClick = {(e) => props.addBeads(e, n)}>
-    {fullbarre}
-    </div>
-  )
-}
 
-const Perle = (props) => {
-  const n = props.n;
-  const colors = ["#D61717","#046913","#FAC2F6","#FFE200","#00E4F9","#A43CF5","#FFFFFF","#643203","#021FAE","#DBBF40"]
-  let styles = {
-      backgroundColor: colors[n-1],
-    };
-  return (
-    <div className = "bead" style={styles}>
-    </div>
-  )
-}
 
-const ButtonReset = (props) => {
-  const {removeAllBeads} = props;
-  return (
-    <div onClick = {removeAllBeads} className = "button">
-      <Eraser/>
-    </div>
-  )
-}
 
 const TableDeSeguin10 = (props) => {
   const {tile} = props
