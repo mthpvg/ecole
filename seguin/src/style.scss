@@ -18,6 +18,9 @@ body {
 svg {
   height : $svgHeight
 }
+.small svg {
+  height : $svgHeightPhone
+}
 .flex{
   display: flex;
 }

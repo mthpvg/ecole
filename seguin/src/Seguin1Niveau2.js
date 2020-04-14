@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import audio from './audio';
 import {animals, Cat} from './animals';
 import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
-
 import Navbar from './Navbar';
 import './style.scss'
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
