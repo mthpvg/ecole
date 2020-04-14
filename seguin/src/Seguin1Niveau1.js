@@ -67,8 +67,8 @@ class Seguin1Niveau1 extends React.Component {
   }
 
   play(){
-    const n = this.state.nTold-10;
-    const toPlay = new Audio(cloudFolder + audio[n]);
+    const n = this.state.nTold;
+    const toPlay = new Audio(cloudFolder + audio[n-1]);
     toPlay.play();
   }
 

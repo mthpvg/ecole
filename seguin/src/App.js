@@ -7,6 +7,12 @@ const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v158
 
 const games = [
   {
+    url : "beadsasnumber",
+    name : "Les Perles",
+    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586526960/Seguin1N1.png",
+    alt : "jeux numeration Montessori Seguin 1 perles uniquement"
+  },
+  {
     url : "seguin1niveau1",
     name : "Seguin 1 Niveau 1",
     img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586526960/Seguin1N1.png",
