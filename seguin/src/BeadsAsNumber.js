@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import audio from './audio';
+import {audio} from './audio';
 import {animals, Cat} from './animals';
 import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const audio = [
+export const audio = [
   "1_tvfufk.mp3",
   "2_xwz4np.mp3",
   "3_fktiyy.mp3",
@@ -22,4 +22,14 @@ const audio = [
   "19_u16x9d.mp3"
 ]
 
-export default audio
+export const audioDizaines = [
+  "10-p_eh1t11.mp3",
+  "20-p_znlfmj.mp3",
+  "30-p_fr6ytp.mp3",
+  "40-p_hokxm9.mp3",
+  "50-p_dwrjud.mp3",
+  "60-p_mr8z8m.mp3",
+  "70-p_fhpmqs.mp3",
+  "80-p_nmgd82.mp3",
+  "90-p_a0knhm.mp3"
+]

@@ -23,6 +23,12 @@ const games = [
     name : "Seguin 1 Niveau 2",
     img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586526958/seguin1n2_dtufis.jpg",
     alt : "jeux numeration Montessori Seguin 1"
+  },
+  {
+    url : "seguin2niveau1",
+    name : "Seguin 2 Niveau 1",
+    img : "https://res.cloudinary.com/eclimontessori/image/upload/v1586526958/seguin1n2_dtufis.jpg",
+    alt : "jeux numeration Montessori Seguin 2"
   }
 ]
 
