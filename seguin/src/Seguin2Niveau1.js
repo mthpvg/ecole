@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {audioDizaines} from './audio';
-import {animals, Cat} from './animals';
+import {animals} from './dinosaurs';
 import {AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
 import Navbar from './Navbar';
 import './style.scss'
