@@ -35,17 +35,13 @@ class Seguin1Niveau1 extends React.Component {
     this.setNewNumber();
     window.addEventListener('resize', this.updateDimensions);
   }
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.nTold  !== this.state.nTold){
-      this.play()
-    }
-  }
   updateDimensions(){
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   setNewNumber(){
     const numberToFind = Math.floor(Math.random() * 10 )+10;
+    this.play(numberToFind)
     this.setState({
       nBeads:[0,0],
       nTold :numberToFind
@@ -66,9 +62,9 @@ class Seguin1Niveau1 extends React.Component {
     this.setState({nBeads : []})
   }
 
-  play(){
-    const n = this.state.nTold;
-    const toPlay = new Audio(cloudFolder + audio[n-1]);
+  play(n){
+    const numberToPlay = Number.isInteger(n) ? n : this.state.nTold;
+    const toPlay = new Audio(cloudFolder + audio[numberToPlay-1]);
     toPlay.play();
   }
 

@@ -24,14 +24,15 @@ class Seguin2Niveau1 extends React.Component {
     this.setNewNumber = this.setNewNumber.bind(this)
     this.checkResult = this.checkResult.bind(this)
     this.updateDimensions = this.updateDimensions.bind(this)
+    this.setnTable = this.setnTable.bind(this)
   }
   componentDidMount(){
     this.setNewNumber();
     window.addEventListener('resize', this.updateDimensions);
   }
   componentDidUpdate(prevProps, prevState){
-    if(prevState.nTold  !== this.state.nTold){
-      this.play()
+    if(prevState.nTable !== this.state.nTable){
+      this.checkResult()
     }
   }
   updateDimensions(){
@@ -39,19 +40,21 @@ class Seguin2Niveau1 extends React.Component {
   }
 
   setNewNumber(){
-    const numberToFind = Math.floor(Math.random() * 10 )+10;
+    const numberToFind = Math.floor(Math.random() * 9 ) + 1;
+    this.play(numberToFind)
     this.setState({
       nTable:0,
       nTold :numberToFind
     });
   }
 
-  addTile(e, value){
-    this.setState({nTable:value})
+  setnTable(e, value){
+    this.setState({nTable:value});
   }
-  play(){
-    const n = this.state.nTold;
-    const toPlay = new Audio(cloudFolder + audioDizaines[n-1]);
+
+  play(n){
+    const numberToPlay = Number.isInteger(n) ? n : this.state.nTold;
+    const toPlay = new Audio(cloudFolder + audioDizaines[numberToPlay-1]);
     toPlay.play();
   }
   checkResult(){
@@ -88,11 +91,13 @@ class Seguin2Niveau1 extends React.Component {
     if (windowsWidth < 768) {
       animalsHeight = 30
     }
+    const boards10to50 = [...Array(5)].map((e, i) => <TableDeSeguin2 ten = {i+1} key = {i+1} unit = {0} setnTable = {this.setnTable}/>)
+    const boards60to90 = [...Array(4)].map((e, i) => <TableDeSeguin2 ten = {i+6} key = {i+5} unit = {0} setnTable = {this.setnTable}/>)
     return (
       <div>
         <Navbar history = {this.props.history}/>
-        <div className = "container">
-          <div className = "container__left">
+        <div className = "container-smallGame flex">
+          <div className = "container__half">
             <div>
               <h4>Clique sur l'oreille pour entendre le son. Clique sur le bon nombre.</h4>
               <div className = "container__animalWon">
@@ -100,11 +105,14 @@ class Seguin2Niveau1 extends React.Component {
               </div>
             </div>
           </div>
-          <div className = "container__center">
+          <div className = "container__half">
             <AudioButton play = {this.play}/>
-            <div className = "container__results">
-              <div className = "container__table">
-                <TableDeSeguin2 tile = {this.state.nTable}/>
+            <div className = "flex flex-justify-space-between">
+              <div className = "container__table flex-column">
+                {boards10to50}
+              </div>
+              <div className = "container__table flex-column flex-grow">
+                {boards60to90}
               </div>
             </div>
           </div>
@@ -122,15 +130,15 @@ class Seguin2Niveau1 extends React.Component {
 
 
 const TableDeSeguin2 = (props) => {
-  const {tile} = props
+  const {ten, unit, setnTable} = props
   return (
-    <div className="table__contour">
+    <div className="table__contour" onClick = {(e) => setnTable(e,ten)}>
       <div className="table__interieur">
         <div className="tile">
-          1
+          {ten}
         </div>
         <div className="tile">
-          {tile}
+          {unit}
         </div>
       </div>
     </div>
