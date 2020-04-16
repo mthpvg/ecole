@@ -79,6 +79,7 @@ class Seguin1Niveau2 extends React.Component {
       switch (newScore) {
         case 10:
           let wins = this.state.wins + 1;
+          localStorage.setItem('wins-Seg1N2', wins);
           this.setState({
             score : 0,
             wins
