@@ -9,7 +9,7 @@ import './style.scss'
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 const logo = "https://res.cloudinary.com/eclimontessori/image/upload/v1586343660/logo-small_rfd5z6.png"
 const winsLocalStorage = "wins-Seg2N1"
-
+const medalsLocalStorage = "medals-Seg2N1"
 
 class Seguin2Niveau1 extends React.Component {
   constructor (props) {
@@ -20,7 +20,8 @@ class Seguin2Niveau1 extends React.Component {
       score:0,
       wins:0,
       width:0,
-      height:0
+      height:0,
+      medals:0
     }
     this.play = this.play.bind(this)
     this.setNewNumber = this.setNewNumber.bind(this)
@@ -32,7 +33,9 @@ class Seguin2Niveau1 extends React.Component {
   componentDidMount(){
     const winsStored = parseInt(localStorage.getItem(winsLocalStorage));
     const wins = winsStored ? winsStored : 0;
-    this.setState({wins})
+    const medalsStored = parseInt(localStorage.getItem(medalsLocalStorage));
+    const medals = medalsStored ? medalsStored : 0;
+    this.setState({wins, medals})
     this.setNewNumber();
     window.addEventListener('resize', this.updateDimensions);
   }
@@ -75,6 +78,7 @@ class Seguin2Niveau1 extends React.Component {
       this.setState({nTable:0})
     }
     localStorage.setItem(winsLocalStorage, this.state.wins);
+    localStorage.setItem(medalsLocalStorage, this.state.medals)
   }
 
   render() {

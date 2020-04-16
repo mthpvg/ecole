@@ -37,6 +37,8 @@ class Seguin1Niveau2 extends React.Component {
   componentDidMount(){
     const winsStored = parseInt(localStorage.getItem(winsLocalStorage));
     const wins = winsStored ? winsStored : 0;
+    const medalsStored = parseInt(localStorage.getItem(medalsLocalStorage));
+    const medals = medalsStored ? medalsStored : 0;
     this.setState({wins})
     this.setNewNumber();
     window.addEventListener('resize', this.updateDimensions);
