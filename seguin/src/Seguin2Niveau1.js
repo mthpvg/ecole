@@ -66,7 +66,8 @@ class Seguin2Niveau1 extends React.Component {
 
   checkResult(){
     const {nTable, nTold} = this.state;
-    if (nTable === nTold ) {
+    const isCorrect = nTable === nTold
+    if (isCorrect) {
       const state = updateScore(this.state);
       this.setState(state)
       this.setNewNumber()
@@ -75,9 +76,6 @@ class Seguin2Niveau1 extends React.Component {
     }
     localStorage.setItem(winsLocalStorage, this.state.wins);
   }
-
-
-
 
   render() {
     const {score, wins} = this.state

@@ -4,10 +4,12 @@ import {audio} from './audio';
 import {animals, Cat} from './animals';
 import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
 import Navbar from './Navbar';
+import {updateScore} from './helper';
 import './style.scss'
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 const logo = "https://res.cloudinary.com/eclimontessori/image/upload/v1586343660/logo-small_rfd5z6.png"
 const winsLocalStorage = "wins-Seg1N2"
+const medalsLocalStorage = "medals-Seg1N2"
 
 
 class Seguin1Niveau2 extends React.Component {
@@ -20,7 +22,8 @@ class Seguin1Niveau2 extends React.Component {
       score:0,
       wins:0,
       width:0,
-      height:0
+      height:0,
+      medals:0
     }
     this.addBeads = this.addBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)
@@ -78,31 +81,21 @@ class Seguin1Niveau2 extends React.Component {
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const sumBeads = nBeads.reduce(reducer);
     const sumTile = nTable + 10;
-    if (sumTile === sumBeads && sumBeads === nTold ) {
-      let newScore = this.state.score + 1;
-      switch (newScore) {
-        case 10:
-          let wins = this.state.wins + 1;
-          localStorage.setItem(winsLocalStorage, wins);
-          this.setState({
-            score : 0,
-            wins
-          })
-          this.setNewNumber()
-          break;
-        default:
-          this.setState({score : newScore});
-          this.setNewNumber()
-      }
-    } else {
-      if (sumTile === nTold) {
-        this.setState({nBeads : []})
-      } else if (sumBeads === nTold) {
-        this.setState({nTable:0})
-      } else {
-        this.setState({nBeads : [], nTable:0})
-      }
+    const isCorrect = sumTile === sumBeads && sumBeads === nTold
+    if (isCorrect) {
+      const state = updateScore(this.state);
+      this.setState(state)
+      this.setNewNumber()
     }
+    else if (sumTile === nTold) {
+      this.setState({nBeads : []})
+    } else if (sumBeads === nTold) {
+      this.setState({nTable:0})
+    } else {
+      this.setState({nBeads : [], nTable:0})
+    }
+    localStorage.setItem(winsLocalStorage, this.state.wins);
+    localStorage.setItem(medalsLocalStorage, this.state.medals)
   }
 
   render() {

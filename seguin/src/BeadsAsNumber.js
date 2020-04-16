@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {audio} from './audio';
 import {animals, Cat} from './animals';
 import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
-
+import {updateScore} from './helper';
 import Navbar from './Navbar';
 import './style.scss';
 import './style-smallGame.scss'
@@ -67,23 +67,11 @@ class BeadsAsNumber extends React.Component {
 
   checkResult(){
     const {nBeads, nTold} = this.state;
-
-    if (nBeads === nTold ) {
-      let newScore = this.state.score + 1;
-      switch (newScore) {
-        case 10:
-          let wins = this.state.wins + 1;
-          localStorage.setItem(winsLocalStorage, wins);
-          this.setState({
-            score : 0,
-            wins
-          })
-          this.setNewNumber()
-          break;
-        default:
-          this.setState({score : newScore});
-          this.setNewNumber()
-      }
+    const isCorrect = nBeads === nTold;
+    if (isCorrect) {
+      const state = updateScore(this.state);
+      this.setState(state)
+      this.setNewNumber()
     } else {
       this.removeAllBeads()
     }
