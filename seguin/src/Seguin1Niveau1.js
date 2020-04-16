@@ -10,6 +10,7 @@ import './style-smallGame.scss'
 
 const cloudFolder = "https://res.cloudinary.com/eclimontessori/video/upload/v1586180865/audio-application-seguin/"
 const logo = "https://res.cloudinary.com/eclimontessori/image/upload/v1586343660/logo-small_rfd5z6.png"
+const winsLocalStorage = "wins-Seg1N1"
 
 
 class Seguin1Niveau1 extends React.Component {
@@ -32,6 +33,9 @@ class Seguin1Niveau1 extends React.Component {
 
   }
   componentDidMount(){
+    const winsStored = parseInt(localStorage.getItem(winsLocalStorage));
+    const wins = winsStored ? winsStored : 0;
+    this.setState({wins})
     this.setNewNumber();
     window.addEventListener('resize', this.updateDimensions);
   }
@@ -77,7 +81,7 @@ class Seguin1Niveau1 extends React.Component {
       switch (newScore) {
         case 10:
           let wins = this.state.wins + 1;
-          localStorage.setItem('wins-Seg1N1', wins);
+          localStorage.setItem(winsLocalStorage, wins);
           this.setState({
             score : 0,
             wins
