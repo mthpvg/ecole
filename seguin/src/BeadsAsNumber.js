@@ -102,7 +102,7 @@ class BeadsAsNumber extends React.Component {
     }
     return (
       <div>
-        <Navbar history = {this.props.history}/>
+        <Navbar history = {this.props.history} medals = {this.state.medals}/>
         <div className = "container-smallGame flex flex-wrap">
           <div className = "container__half">
             <div>

@@ -99,7 +99,7 @@ class Seguin2Niveau1 extends React.Component {
     const boards60to90 = [...Array(4)].map((e, i) => <TableDeSeguin2 ten = {i+6} key = {i+5} unit = {0} setnTable = {this.setnTable}/>)
     return (
       <div>
-        <Navbar history = {this.props.history}/>
+        <Navbar history = {this.props.history} medals = {this.state.medals}/>
         <div className = "container-smallGame flex">
           <div className = "container__half">
             <div>

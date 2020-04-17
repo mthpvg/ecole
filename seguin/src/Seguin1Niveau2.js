@@ -121,7 +121,7 @@ class Seguin1Niveau2 extends React.Component {
     }
     return (
       <div>
-        <Navbar history = {this.props.history}/>
+        <Navbar history = {this.props.history} medals = {this.state.medals}/>
         <div className = "container">
           <div className = "container__left">
             <div>
