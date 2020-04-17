@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Dino1 = (
-  <svg viewBox="0 0 304 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino1" viewBox="0 0 304 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <path d="M303.9,106.99 C303.9,106.99 303.9,106.99 303.89,106.99 C303.58,106.99 292.68,106.62 292.68,106.62 L290.52,113.56 C290.26,114.41 289.96,115.24 289.64,116.06 C286.06,125.27 278.96,132.8 269.74,136.52 C266.49,137.83 263.08,138.79 259.58,139.38 C221.08,145.85 201.46,162.08 201.46,162.08 C202.79,168.97 203.78,176.29 204.49,183.9 C204.84,187.58 205.11,191.34 205.33,195.15 L180.48,217.5 L144.7,185.32 L108.93,217.5 L75.28,187.24 C74.87,182.85 74.55,178.56 74.31,174.37 C73.49,160 73.62,146.82 74.39,134.88 C74.72,129.79 75.16,124.92 75.69,120.29 L89.03,122.5 L101.88,76.12 L149.36,84 L162.2,37.63 L209.68,45.51 L213.85,30.46 L214.22,29.11 L214.23,29.11 C214.28,29.11 214.34,29.11 214.39,29.12 C216.06,29.17 217.69,29.23 219.3,29.32 C231,29.91 241.13,31.22 249.32,32.65 C264.93,35.39 278.27,45.35 285.4,59.49 C296.7,81.92 303.9,106.99 303.9,106.99 Z" id="Path" fill="#EDC148"></path>
       <path d="M211.15,295.93 C231.19,295.93 247.44,312.18 247.44,332.22 C247.44,352.27 231.19,368.52 211.15,368.52 C191.1,368.52 174.85,352.27 174.85,332.22 C174.85,312.18 191.1,295.93 211.15,295.93 Z" id="Path" fill="#F2F2F2"></path>
       <path d="M151.36,242.72 C159.75,242.72 166.55,249.52 166.55,257.92 C166.55,266.31 159.75,273.11 151.36,273.11 C142.97,273.11 136.16,266.31 136.16,257.92 C136.16,249.52 142.97,242.72 151.36,242.72 Z" id="Path" fill="#F2F2F2"></path>
@@ -21,7 +21,7 @@ const Dino1 = (
 )
 
 const Dino2 = (
-  <svg viewBox="0 0 347 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino2" viewBox="0 0 347 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(2)" transform="translate(173.600917, 217.500000) scale(-1, 1) translate(-173.600917, -217.500000) " fillRule="nonzero">
               <circle id="XMLID_91_" fill="#98C79C" cx="205.468991" cy="284.185367" r="21.2844037"></circle>
@@ -52,7 +52,7 @@ const Dino2 = (
 )
 
 const Dino3 = (
-  <svg viewBox="0 0 466 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino3" viewBox="0 0 466 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(4)" transform="translate(232.987616, 217.500000) scale(-1, 1) translate(-232.987616, -217.500000) " fillRule="nonzero">
               <polygon id="XMLID_475_" fill="#F6D563" points="288.481765 193.584427 292.223034 168.441966 268.214536 156.490913 259.157647 130.98483 231.283978 134.289752 231.263777 134.354396 214.071176 122.983793 198.357307 137.719923 187.136192 130.299334 161.507554 154.332074 175.174365 173.497663 202.850062 172.277508 204.568514 166.073034 229.785046 164.961966 230.203885 163.44822 249.285975 174.579102 248.020031 175.869288 260.827616 200.432647 262.191873 200.202353 255.78 206.73678 268.588932 231.300139 295.90774 226.709071 299.98435 199.309458"></polygon>
@@ -76,7 +76,7 @@ const Dino3 = (
 )
 
 const Dino4 = (
-  <svg viewBox="0 0 354 434" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino4" viewBox="0 0 354 434" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="dinosaur-svgrepo-com" transform="translate(177.107143, 217.500000) scale(-1, 1) translate(-177.107143, -217.500000) " fillRule="nonzero">
             <path d="M4.8285,292.236729 L4.8285,292.236729 C-1.35471429,284.915057 -0.432514286,273.966729 6.8904,267.782271 L39.2320286,240.469243 C40.2076714,239.645229 41.6680286,239.768271 42.4920429,240.743914 L61.8992571,263.724343 C62.7232714,264.701229 62.6002286,266.160343 61.6245857,266.984357 L29.2829571,294.297386 C21.9600429,300.4806 11.0117143,299.5584 4.8285,292.236729 Z" id="XMLID_47_" fill="#ABD1AD"></path>
@@ -102,7 +102,7 @@ const Dino4 = (
 )
 
 const Dino5 = (
-  <svg viewBox="0 0 435 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino5" viewBox="0 0 435 435" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(5)" transform="translate(217.500000, 217.500000) scale(-1, 1) translate(-217.500000, -217.500000) " fillRule="nonzero">
               <path d="M397.173691,340.435078 L397.173691,404.185518 L330.978076,397.174541 L283.695615,321.522773 L226.956152,236.413154 L160.760537,179.673691 L160.760537,137.119307 C160.760537,108.394014 184.046631,85.1087695 212.771074,85.1087695 L212.771074,85.1087695 C223.217021,85.1087695 231.684229,93.5759766 231.684229,104.021924 L231.684229,151.304385 L264.782461,151.304385 C285.672656,151.304385 302.60877,168.240498 302.60877,189.130693 L302.60877,236.413154 L321.521924,236.413154 C337.19042,236.413154 349.89123,249.113965 349.89123,264.782461 L349.89123,321.521924 L378.260537,321.521924 C388.706484,321.521924 397.173691,329.989131 397.173691,340.435078 Z" id="Path" fill="#494434"></path>
@@ -116,7 +116,7 @@ const Dino5 = (
 )
 
 const Dino6 = (
-  <svg viewBox="0 0 850 433" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino6" viewBox="0 0 850 433" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(3)" transform="translate(424.012755, 216.500000) scale(-1, 1) translate(-424.012755, -216.500000) translate(-1.000000, -1.000000)" fillRule="nonzero">
               <path d="M406.0725,300.824694 L406.0725,380.722653 L397.194949,380.722653 C382.54699,380.722653 370.562296,392.707347 370.562296,407.355306 C370.562296,422.003265 382.54699,433.987959 397.194949,433.987959 L406.0725,433.987959 L459.337806,433.987959 L459.337806,380.722653 L459.337806,300.824694 L406.0725,300.824694 L406.0725,300.824694 Z" id="XMLID_801_" fill="#DD916F"></path>
@@ -151,7 +151,7 @@ const Dino6 = (
 )
 
 const Dino7 = (
-  <svg viewBox="0 0 894 433" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="dino7" viewBox="0 0 894 433" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(1)" transform="translate(446.526178, 217.500000) scale(-1, 1) translate(-446.526178, -217.500000) translate(-1.000000, 0.000000)" fillRule="nonzero">
               <path d="M521.414686,432.424162 L510.70822,432.424162 C491.493063,432.424162 475.915052,416.846152 475.915052,397.630995 L475.915052,288.990314 L556.207853,288.990314 L556.207853,397.630995 C556.210131,416.846152 540.63212,432.424162 521.414686,432.424162 Z" id="XMLID_43_" fill="#DB8269"></path>
@@ -173,7 +173,7 @@ const Dino7 = (
 )
 
 const Dino8 = (
-  <svg viewBox="0 0 1125 433" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <svg key="dino8" viewBox="0 0 1125 433" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(1)" transform="translate(562.552356, 216.500000) scale(-1, 1) translate(-562.552356, -216.500000) translate(0.052356, 0.000000)" fillRule="nonzero">
               <path d="M636.414686,432.424162 L625.70822,432.424162 C606.493063,432.424162 590.915052,416.846152 590.915052,397.630995 L590.915052,288.990314 L671.207853,288.990314 L671.207853,397.630995 C671.210131,416.846152 655.63212,432.424162 636.414686,432.424162 Z" id="XMLID_43_" fill="#87B98F"></path>

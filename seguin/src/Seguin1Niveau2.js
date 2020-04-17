@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {audio, tada} from './audio';
-import {animals, Cat} from './animals';
+import {planets} from './planets';
 import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
 import Navbar from './Navbar';
 import {updateScore} from './helper';
@@ -117,8 +117,8 @@ class Seguin1Niveau2 extends React.Component {
     const style_position = {left : position+"%"};
     const maxHeight = window.innerHeight;
     const windowsWidth = window.innerWidth;
-    const animal = animals[wins];
-    const animalWon = animals.slice(0,wins);
+    const animal = planets[wins];
+    const animalWon = planets.slice(0,wins);
     let animalsHeight = 60;
     if (windowsWidth < 768) {
       animalsHeight = 30
