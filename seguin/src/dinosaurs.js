@@ -173,7 +173,7 @@ const Dino7 = (
 )
 
 const Dino8 = (
-  <svg width="1125px" height="433px" viewBox="0 0 1125 433" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 1125 433" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="dinosaur-svgrepo-com-(1)" transform="translate(562.552356, 216.500000) scale(-1, 1) translate(-562.552356, -216.500000) translate(0.052356, 0.000000)" fillRule="nonzero">
               <path d="M636.414686,432.424162 L625.70822,432.424162 C606.493063,432.424162 590.915052,416.846152 590.915052,397.630995 L590.915052,288.990314 L671.207853,288.990314 L671.207853,397.630995 C671.210131,416.846152 655.63212,432.424162 636.414686,432.424162 Z" id="XMLID_43_" fill="#87B98F"></path>
