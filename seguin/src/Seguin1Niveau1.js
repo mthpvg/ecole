@@ -43,6 +43,12 @@ class Seguin1Niveau1 extends React.Component {
     this.setNewNumber();
     window.addEventListener('resize', this.updateDimensions);
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.wins !== this.state.wins) {
+      localStorage.setItem(winsLocalStorage, this.state.wins);
+      localStorage.setItem(medalsLocalStorage, this.state.medals)
+    }
+  }
   updateDimensions(){
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
@@ -88,8 +94,6 @@ class Seguin1Niveau1 extends React.Component {
     } else {
       this.removeAllBeads()
     }
-    localStorage.setItem(winsLocalStorage, this.state.wins);
-    localStorage.setItem(medalsLocalStorage, this.state.medals)
   }
 
   render() {

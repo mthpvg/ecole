@@ -43,6 +43,10 @@ class Seguin2Niveau1 extends React.Component {
     if(prevState.nTable !== this.state.nTable){
       this.checkResult()
     }
+    if (prevState.wins !== this.state.wins) {
+      localStorage.setItem(winsLocalStorage, this.state.wins);
+      localStorage.setItem(medalsLocalStorage, this.state.medals)
+    }
   }
   updateDimensions(){
     this.setState({ width: window.innerWidth, height: window.innerHeight });
@@ -69,7 +73,7 @@ class Seguin2Niveau1 extends React.Component {
 
   checkResult(){
     const {nTable, nTold} = this.state;
-    const isCorrect = nTable === nTold
+    const isCorrect = nTable === nTold;
     if (isCorrect) {
       const state = updateScore(this.state);
       this.setState(state)
@@ -77,8 +81,6 @@ class Seguin2Niveau1 extends React.Component {
     } else {
       this.setState({nTable:0})
     }
-    localStorage.setItem(winsLocalStorage, this.state.wins);
-    localStorage.setItem(medalsLocalStorage, this.state.medals)
   }
 
   render() {
