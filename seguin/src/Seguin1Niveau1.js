@@ -23,7 +23,8 @@ class Seguin1Niveau1 extends React.Component {
       score:0,
       wins:0,
       width:0,
-      height:0
+      height:0,
+      medals:0
     }
     this.addBeads = this.addBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)

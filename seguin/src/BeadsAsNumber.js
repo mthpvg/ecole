@@ -22,7 +22,8 @@ class BeadsAsNumber extends React.Component {
       score:0,
       wins:0,
       width:0,
-      height:0
+      height:0,
+      medals:0
     }
     this.changeNBeads = this.changeNBeads.bind(this)
     this.removeAllBeads = this.removeAllBeads.bind(this)
