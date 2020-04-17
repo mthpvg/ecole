@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {audio} from './audio';
+import {audio, tada} from './audio';
 import {animals, Cat} from './animals';
 import {Barre, Perle, AudioButton, ButtonReset, ButtonValid} from './ActivitiesLib';
 import Navbar from './Navbar';
@@ -46,7 +46,11 @@ class Seguin1Niveau2 extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.wins !== this.state.wins) {
       localStorage.setItem(winsLocalStorage, this.state.wins);
-      localStorage.setItem(medalsLocalStorage, this.state.medals)
+      if (prevState.medals === this.state.medals-1) {
+        localStorage.setItem(medalsLocalStorage, this.state.medals);
+        const toPlay = new Audio(cloudFolder + tada);
+        toPlay.play();
+      }
     }
   }
   updateDimensions(){

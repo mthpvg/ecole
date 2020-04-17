@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Marcassite = (
-  <svg className="svg-stones" viewBox="0 0 98 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="Marcassite" className="svg-stones" viewBox="0 0 98 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="marcassite">
               <polygon id="Path-6" fill="#F8EDCF" points="26.2018816 99.0153216 97.9180871 20.0153216 42.8704841 0 0 48.6165709"></polygon>
@@ -13,7 +13,7 @@ const Marcassite = (
 )
 
 const Jade = (
-  <svg  viewBox="0 0 86 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg  key="Jade" viewBox="0 0 86 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <defs>
           <radialGradient cx="50%" cy="31.2190802%" fx="50%" fy="31.2190802%" r="68.7809198%" gradientTransform="translate(0.500000,0.312191),scale(0.965116,1.000000),rotate(90.000000),scale(1.000000,1.163164),translate(-0.500000,-0.312191)" id="radialGradient-1">
               <stop stopColor="#00A949" offset="0%"></stop>
@@ -27,7 +27,7 @@ const Jade = (
 )
 
 const Beryl = (
-  <svg className="svg-stones" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="Beryl" className="svg-stones" viewBox="0 0 70 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="beryl" transform="translate(-1.000000, -8.000000)">
               <polygon id="Polygon" fill="#A2396F" transform="translate(36.483072, 23.009649) rotate(14.000000) translate(-36.483072, -23.009649) " points="42.178228 8.04424484 70.0884829 15.3072732 68.5363184 29.7497089 35.5462637 37.9750534 2.87766207 31.5646985 3.29726912 16.5357861"></polygon>
@@ -40,7 +40,7 @@ const Beryl = (
 )
 
 const Topaze = (
-  <svg className="svg-stones" viewBox="0 0 86 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="Topaze" className="svg-stones" viewBox="0 0 86 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="topaze">
               <path d="M50.3051235,30.6012493 L1.37075079,10.6856304 C8.24857345,3.96270966 13.1569516,0.601249279 16.0958853,0.601249279 C19.034819,0.601249279 39.5685418,8.07190386 77.6970539,23.013213 L85.3707508,28.6287358 L50.3051235,30.6012493 Z" id="Path-3" fill="#90BECB"></path>
@@ -52,7 +52,7 @@ const Topaze = (
 )
 
 const Anglesite = (
-  <svg className="svg-stones" viewBox="0 0 98 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="Anglesite" className="svg-stones" viewBox="0 0 98 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="anglésite">
               <polygon id="Path-9" fill="#EFDE8E" points="44 39.6405283 57.9332687 13 64.6023374 13 98 66.7258588 98 73.8607474 93.3811917 115"></polygon>
@@ -66,7 +66,7 @@ const Anglesite = (
 )
 
 const Saphyr = (
-<svg className="svg-stones" viewBox="0 0 153 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<svg key="Saphyr" className="svg-stones" viewBox="0 0 153 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="saphyr" transform="translate(-0.055944, 0.000000)" fillRule="nonzero">
             <polygon id="Path" fill="#D5B4E8" points="114.055944 0 37.0559441 0 75.5559441 52"></polygon>
@@ -80,7 +80,7 @@ const Saphyr = (
 )
 
 const Ruby = (
-<svg className="svg-stones" viewBox="0 0 179 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<svg key="Ruby" className="svg-stones" viewBox="0 0 179 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="ruby" fillRule="nonzero">
             <path d="M11.2211549,39.0385106 L33.6123163,11.1540422 C42.4267283,0 42.1195013,0 50.4031324,0 L128.699383,0 C136.966407,0 136.658541,0 145.456346,11.1540422 L167.802797,39.0385106 C182.877358,55.7918795 182.586737,55.7918795 167.802797,72.5 L106.347183,133.845958 C100.93654,139.422979 98.0801592,145 89.5844712,145 C81.0772862,145 78.2100474,139.422979 72.7936551,133.845958 L11.2154063,72.5 C-3.59088965,55.7912422 -3.88725828,55.7912422 11.2211549,39.0385106 Z" id="Path" fill="#BF392C"></path>
@@ -99,7 +99,7 @@ const Ruby = (
 )
 
 const Diamond = (
-  <svg className="svg-stones" viewBox="0 0 133 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <svg key="Diamond" className="svg-stones" viewBox="0 0 133 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="diamond" fillRule="nonzero">
               <polygon id="Path" fill="#82C8DC" points="0 34 67 112 37.2222543 34"></polygon>

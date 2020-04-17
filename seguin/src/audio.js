@@ -33,3 +33,5 @@ export const audioDizaines = [
   "80-p_nmgd82.mp3",
   "90-p_a0knhm.mp3"
 ]
+
+export const tada = "tada_fftgrx.mp3"

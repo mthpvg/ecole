@@ -9,7 +9,6 @@ class Navbar extends Component {
 
   render() {
     const {medals} = this.props;
-    console.log(stones.slice(0,medals));
     const medalsShowed = medals ? stones.slice(0,medals).map(stone => stone.svg) : ""
     return (
       <div className="flex flex-justify-space-between small">
